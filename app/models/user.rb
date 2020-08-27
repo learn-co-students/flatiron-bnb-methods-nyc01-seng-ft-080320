@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   #guest methods
   has_many :trips, :class_name => "Reservation", :foreign_key => 'guest_id'
   has_many :reviews, :foreign_key => 'guest_id'
-  has_many :accommodations, through: :trips, :class_name => "Listing", source: "listing"
+  has_many :accommodations, through: :trips, :class_name => "Listing", source: "listings"
   has_many :hosts, :class_name => "User", through: :accommodations
   
 end
